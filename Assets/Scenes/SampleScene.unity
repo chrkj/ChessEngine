@@ -235,9 +235,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03ba76d814c573342a63b2f510f6203c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pieceDepth: 0.5
-  darkColor: {r: 1, g: 1, b: 1, a: 1}
-  lightColor: {r: 0, g: 0, b: 0, a: 1}
+  pieceDepth: -0.1
+  darkColor: {r: 0.59, g: 0.69, b: 0.45, a: 1}
+  lightColor: {r: 0.93, g: 0.93, b: 0.82, a: 1}
 --- !u!4 &1755557661
 Transform:
   m_ObjectHideFlags: 0
