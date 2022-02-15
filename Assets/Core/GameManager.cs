@@ -5,7 +5,6 @@ namespace Chess.Core
 {
     public class GameManager : MonoBehaviour
     {
-        
         private Board _board;
         // Player whitePlayer;
         // Player blackPlayer;
@@ -16,12 +15,11 @@ namespace Chess.Core
         private void Start()
         {
             _board = new Board();
-            _playerTurn = new Player();
-            _boardUI = FindObjectOfType<BoardUI>();
-            
-            _boardUI.InitBoard();
             _board.LoadStartPosition();
+            _boardUI = FindObjectOfType<BoardUI>();
+            _boardUI.InitBoard();
             _boardUI.UpdateUI(_board);
+            _playerTurn = new Player(_board);
         }
 
         private void Update()

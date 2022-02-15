@@ -59,6 +59,11 @@
         {
             return (piece & TypeMask);
         }
+
+        public static bool IsSameColor(int piece1, int piece2)
+        {
+            return (piece1 & ColorMask) == (piece2 & ColorMask);
+        }
         
     }
 }

@@ -2,7 +2,8 @@
 {
     public class Board
     {
-        private byte[] _board = new byte[64];
+        // TODO: Should be private and accessed through MakeMove method.
+        public byte[] _board = new byte[64];
 
         // *******************************************************
         // BOARD -- Board Array. Used to hold the current position 

@@ -16,17 +16,17 @@ namespace Chess.UI
                 switch (Piece.GetType(piece))
                 {
                     case Piece.King:
-                        return pieceSprites.pawn;
+                        return pieceSprites.king;
                     case Piece.Pawn:
-                        return pieceSprites.rook;
+                        return pieceSprites.pawn;
                     case Piece.Knight:
                         return pieceSprites.knight;
                     case Piece.Bishop:
                         return pieceSprites.bishop;
                     case Piece.Rook:
-                        return pieceSprites.queen;
+                        return pieceSprites.rook;
                     case Piece.Queen:
-                        return pieceSprites.king;
+                        return pieceSprites.queen;
                     default:
                         return null;
                 }
