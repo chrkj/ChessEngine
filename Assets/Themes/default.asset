@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: default
   m_EditorClassIdentifier: 
   whitePieces:
-    pawn: {fileID: 21300000, guid: c92e492bd819ca447855da15415b55eb, type: 3}
-    rook: {fileID: 21300000, guid: 60c27f173dd0bb040a0d39d1b6b4a1ca, type: 3}
-    knight: {fileID: 21300000, guid: ee657b2548f3e1f488ecbae99e7bd18d, type: 3}
-    bishop: {fileID: 21300000, guid: 0916addd16302904d8fd1eebea0cc525, type: 3}
-    queen: {fileID: 21300000, guid: 74db372a36dee5f4ca324e3699366357, type: 3}
-    king: {fileID: 21300000, guid: 065a2e4d05867e141a4ef6e6e90fc14c, type: 3}
+    pawn: {fileID: 421191062671846005, guid: 93d09f1562c96ca4d8eca6c21e844faf, type: 3}
+    rook: {fileID: -8231439895271094956, guid: 93d09f1562c96ca4d8eca6c21e844faf, type: 3}
+    knight: {fileID: 5262411738066956617, guid: 93d09f1562c96ca4d8eca6c21e844faf, type: 3}
+    bishop: {fileID: 1801684832408766203, guid: 93d09f1562c96ca4d8eca6c21e844faf, type: 3}
+    queen: {fileID: -5707208235025365451, guid: 93d09f1562c96ca4d8eca6c21e844faf, type: 3}
+    king: {fileID: 5815346444209245126, guid: 93d09f1562c96ca4d8eca6c21e844faf, type: 3}
   blackPieces:
-    pawn: {fileID: 21300000, guid: 1c2aa99e725616542bd582a9f5e0e9bc, type: 3}
-    rook: {fileID: 21300000, guid: b3a04bc3ecd513744b890ca083000c90, type: 3}
-    knight: {fileID: 21300000, guid: beb2fff2069eaf546889a32cd47624eb, type: 3}
-    bishop: {fileID: 21300000, guid: 0065ef4ea1a092d448799d390688eca2, type: 3}
-    queen: {fileID: 21300000, guid: 56f97c26b332e7342b91aeb8c7dc2fa0, type: 3}
-    king: {fileID: 21300000, guid: c57ffbc30c16cb749a6de9f8987a3b08, type: 3}
+    pawn: {fileID: -7446464978723970562, guid: 93d09f1562c96ca4d8eca6c21e844faf, type: 3}
+    rook: {fileID: -9028730725494140493, guid: 93d09f1562c96ca4d8eca6c21e844faf, type: 3}
+    knight: {fileID: 2484422302985503874, guid: 93d09f1562c96ca4d8eca6c21e844faf, type: 3}
+    bishop: {fileID: -4521170433502928094, guid: 93d09f1562c96ca4d8eca6c21e844faf, type: 3}
+    queen: {fileID: -5519977043689896800, guid: 93d09f1562c96ca4d8eca6c21e844faf, type: 3}
+    king: {fileID: 6713323665980220584, guid: 93d09f1562c96ca4d8eca6c21e844faf, type: 3}

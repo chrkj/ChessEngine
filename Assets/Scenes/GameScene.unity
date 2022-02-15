@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieceTheme: {fileID: 11400000, guid: 078d97bc9c8546e4b951fc90fd4d153e, type: 2}
-  pieceScale: 0.1
+  pieceScale: 0.3
   pieceDepth: -0.1
   darkColor: {r: 0.59, g: 0.69, b: 0.45, a: 1}
   lightColor: {r: 0.93, g: 0.93, b: 0.82, a: 1}
