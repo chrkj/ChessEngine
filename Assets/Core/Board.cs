@@ -8,14 +8,14 @@
         // BOARD -- Board Array. Used to hold the current position 
         // of the board during play. The board itself
         // looks like: 
-        // 	0402030506030204
-        // 	0101010101010101
-        // 	0000000000000000
-        // 	0000000000000000
-        // 	0000000000000060
-        // 	0000000000000000
-        // 	8181818181818181
-        // 	8482838586838284
+        // 	05 03 04 06 01 04 03 05
+        // 	02 02 02 02 02 02 02 02
+        // 	00 00 00 00 00 00 00 00
+        // 	00 00 00 00 00 00 00 00
+        // 	00 00 00 00 00 00 00 60
+        // 	00 00 00 00 00 00 00 00
+        // 	34 34 34 34 34 34 34 34
+        // 	37 35 36 38 33 36 35 37
         // The individual bits of the other bytes in the board array are as follows:
         // 	Bit 5 -- Color of the piece
         // 	    1 -- Black 

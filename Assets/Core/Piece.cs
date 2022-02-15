@@ -3,20 +3,20 @@
     public class Piece
     {
         // *************************************
-        // 	Bit 6 -- Color of the piece
-        // 	    1 -- Black 
-        // 	    0 -- White 
-        // 	Bit 5 -- Castle flag for Kings only
-        // 	Bit 4 -- Piece has moved flag
-        // 	Bits 3-1 Piece type 
-        // 		1 -- Pawn 
-        // 		2 -- Knight
-        // 		3 -- Bishop 
-        // 		4 -- Rook 
-        // 		5 -- Queen 
-        // 		6 -- King
-        // 		7 -- Not used
-        // 		0 -- Empty Square
+        // 	Bit 6: Color of the piece
+        // 	    1: Black 
+        // 	    0: White 
+        // 	Bit 5: Castle flag for Kings only
+        // 	Bit 4: Piece has moved flag
+        // 	Bits 3-1 Piece type: 
+        // 		0: None
+        // 		1: King 
+        // 		2: Pawn
+        // 		3: Knight 
+        // 		4: Bishop
+        // 		5: Rook
+        // 		6: Queen
+        // 		7: Not used
         // *************************************
         
         public const byte None =   0b000000;
