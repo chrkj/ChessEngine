@@ -37,7 +37,7 @@
         
         public static bool IsBlack(int piece)
         {
-            return (piece & ColorMask) != Black;
+            return (piece & ColorMask) == Black;
         }
         
         public static bool IsWhite(int piece)

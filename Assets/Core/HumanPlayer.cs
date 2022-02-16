@@ -54,7 +54,7 @@ namespace Chess.Core
                 if (!isValidSquare || !_boardUI.HasSprite(_selectedIndex)) return;
 
                 _selectedPiece = _board.GetPiece(_selectedIndex);
-                if (Piece.IsSameColor(_selectedPiece, _board.GetColorToMove())) return;
+                if (!_board.IsCurrentPlayerPiece(_selectedPiece)) return;
                 
                 _currentState = InputState.PieceDragging;
             }

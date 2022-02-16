@@ -40,39 +40,39 @@ namespace Chess.Core
 
         public void LoadStartPosition()
         {
-            _board[0] = Piece.Rook | Piece.Black;
-            _board[1] = Piece.Knight | Piece.Black;
-            _board[2] = Piece.Bishop | Piece.Black;
-            _board[3] = Piece.Queen | Piece.Black;
-            _board[4] = Piece.King | Piece.Black;
-            _board[5] = Piece.Bishop | Piece.Black;
-            _board[6] = Piece.Knight | Piece.Black;
-            _board[7] = Piece.Rook | Piece.Black;
-            _board[8] = Piece.Pawn | Piece.Black;
-            _board[9] = Piece.Pawn | Piece.Black;
-            _board[10] = Piece.Pawn | Piece.Black;
-            _board[11] = Piece.Pawn | Piece.Black;
-            _board[12] = Piece.Pawn | Piece.Black;
-            _board[13] = Piece.Pawn | Piece.Black;
-            _board[14] = Piece.Pawn | Piece.Black;
-            _board[15] = Piece.Pawn | Piece.Black;
+            _board[0] = Piece.Rook | Piece.White;
+            _board[1] = Piece.Knight | Piece.White;
+            _board[2] = Piece.Bishop | Piece.White;
+            _board[3] = Piece.Queen | Piece.White;
+            _board[4] = Piece.King | Piece.White;
+            _board[5] = Piece.Bishop | Piece.White;
+            _board[6] = Piece.Knight | Piece.White;
+            _board[7] = Piece.Rook | Piece.White;
+            _board[8] = Piece.Pawn | Piece.White;
+            _board[9] = Piece.Pawn | Piece.White;
+            _board[10] = Piece.Pawn | Piece.White;
+            _board[11] = Piece.Pawn | Piece.White;
+            _board[12] = Piece.Pawn | Piece.White;
+            _board[13] = Piece.Pawn | Piece.White;
+            _board[14] = Piece.Pawn | Piece.White;
+            _board[15] = Piece.Pawn | Piece.White;
             
-            _board[48] = Piece.Pawn | Piece.White;
-            _board[49] = Piece.Pawn | Piece.White;
-            _board[50] = Piece.Pawn | Piece.White;
-            _board[51] = Piece.Pawn | Piece.White;
-            _board[52] = Piece.Pawn | Piece.White;
-            _board[53] = Piece.Pawn | Piece.White;
-            _board[54] = Piece.Pawn | Piece.White;
-            _board[55] = Piece.Pawn | Piece.White;
-            _board[56] = Piece.Rook | Piece.White;
-            _board[57] = Piece.Knight | Piece.White;
-            _board[58] = Piece.Bishop | Piece.White;
-            _board[59] = Piece.Queen | Piece.White;
-            _board[60] = Piece.King | Piece.White;
-            _board[61] = Piece.Bishop | Piece.White;
-            _board[62] = Piece.Knight | Piece.White;
-            _board[63] = Piece.Rook | Piece.White;
+            _board[48] = Piece.Pawn | Piece.Black;
+            _board[49] = Piece.Pawn | Piece.Black;
+            _board[50] = Piece.Pawn | Piece.Black;
+            _board[51] = Piece.Pawn | Piece.Black;
+            _board[52] = Piece.Pawn | Piece.Black;
+            _board[53] = Piece.Pawn | Piece.Black;
+            _board[54] = Piece.Pawn | Piece.Black;
+            _board[55] = Piece.Pawn | Piece.Black;
+            _board[56] = Piece.Rook | Piece.Black;
+            _board[57] = Piece.Knight | Piece.Black;
+            _board[58] = Piece.Bishop | Piece.Black;
+            _board[59] = Piece.Queen | Piece.Black;
+            _board[60] = Piece.King | Piece.Black;
+            _board[61] = Piece.Bishop | Piece.Black;
+            _board[62] = Piece.Knight | Piece.Black;
+            _board[63] = Piece.Rook | Piece.Black;
         }
 
         public int GetPiece(int file, int rank)
@@ -100,7 +100,7 @@ namespace Chess.Core
             return _colorToMove;
         }
 
-        // TODO: Set flags piece flags for each move
+        // TODO: Set can castle flag
         public void MakeMove(Move move)
         {
             move.Piece |= Piece.MovedMask;
@@ -113,6 +113,11 @@ namespace Chess.Core
         public static int GetBoardIndex(int file, int rank)
         {
             return rank * 8 + file;
+        }
+
+        public bool IsCurrentPlayerPiece(int piece)
+        {
+            return (_colorToMove & Piece.ColorMask) == (piece & Piece.ColorMask);
         }
 
     }
