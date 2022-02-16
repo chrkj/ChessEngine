@@ -1,14 +1,18 @@
-﻿namespace Chess.Core
+﻿using UnityEditor;
+
+namespace Chess.Core
 {
     public class Board
     {
         // TODO: Should be private and accessed through MakeMove method.
-        public byte[] _board = new byte[64];
+        private readonly byte[] _board = new byte[64];
+
+        private bool _isWhiteToMove = true;
+        private int _colorToMove = Piece.White;
 
         // *******************************************************
         // BOARD -- Board Array. Used to hold the current position 
-        // of the board during play. The board itself
-        // looks like: 
+        // of the board during play. The board itself looks like: 
         // 	05 03 04 06 01 04 03 05
         // 	02 02 02 02 02 02 02 02
         // 	00 00 00 00 00 00 00 00
@@ -73,9 +77,39 @@
 
         public int GetPiece(int file, int rank)
         {
-            return _board[rank * 8 + file];
+            return _board[GetBoardIndex(file, rank)];
+        }
+        
+        public byte GetPiece(int index)
+        {
+            return _board[index];
+        }
+        
+        public bool IsWhiteToMove()
+        {
+            return _isWhiteToMove;
+        }
+        
+        public bool IsBlackToMove()
+        {
+            return !_isWhiteToMove;
         }
 
+        public int GetColorToMove()
+        {
+            return _colorToMove;
+        }
+
+        // TODO: Set flags piece flags for each move
+        public void MakeMove(Move move)
+        {
+            move.Piece |= Piece.MovedMask;
+            _board[move.TargetSquare] = move.Piece;
+            _board[move.StartSquare] = Piece.None;
+            _isWhiteToMove = !_isWhiteToMove;
+            _colorToMove = (_isWhiteToMove) ? Piece.White : Piece.Black;
+        }
+        
         public static int GetBoardIndex(int file, int rank)
         {
             return rank * 8 + file;

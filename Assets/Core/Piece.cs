@@ -1,6 +1,6 @@
 ﻿namespace Chess.Core
 {
-    public class Piece
+    public static class Piece
     {
         // *************************************
         // 	Bit 6: Color of the piece
@@ -63,6 +63,11 @@
         public static bool IsSameColor(int piece1, int piece2)
         {
             return (piece1 & ColorMask) == (piece2 & ColorMask);
+        }
+
+        public static bool IsEmpty(int piece)
+        {
+            return (piece & TypeMask) == None;
         }
         
     }
