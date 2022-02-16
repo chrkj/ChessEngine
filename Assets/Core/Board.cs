@@ -103,8 +103,8 @@ namespace Chess.Core
         // TODO: Set can castle flag
         public void MakeMove(Move move)
         {
-            move.Piece |= Piece.MovedMask;
             _board[move.TargetSquare] = move.Piece;
+            _board[move.TargetSquare] |= Piece.MovedMask;
             _board[move.StartSquare] = Piece.None;
             _isWhiteToMove = !_isWhiteToMove;
             _colorToMove = (_isWhiteToMove) ? Piece.White : Piece.Black;

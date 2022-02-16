@@ -87,8 +87,15 @@ namespace Chess.Core
                 return;
             }
             # endregion
-
-            ChooseMove(chosenMove);
+            
+            // Generate all legal moves from current board
+            var legalMoves = MoveGenerator.GenerateLegalMoves(_board);
+            // Check of chosen move is contained in the set of legal moves
+            if (legalMoves.Contains(chosenMove))
+                ChooseMove(chosenMove);
+            else
+                _boardUI.ResetPiece(_selectedIndex);
+            
             _currentState = InputState.None;
         }
     }
