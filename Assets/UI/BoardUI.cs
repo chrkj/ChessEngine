@@ -11,6 +11,7 @@ namespace Chess.UI
         public float selectedPieceDepth = -0.2f;
         public Color darkColor = new Color(0.59f, 0.69f, 0.45f);
         public Color lightColor = new Color(0.93f, 0.93f, 0.82f);
+        public Color highlightColor = new Color(1f, 0.55f, 0.56f);
         private MeshRenderer[] _squareRenderers;
         private SpriteRenderer[] _pieceRenderers;
 
@@ -87,7 +88,30 @@ namespace Chess.UI
         {
             return _pieceRenderers[index] != null;
         }
+
+        public void HighlightSquare(int index)
+        {
+            _squareRenderers[index].material.color = highlightColor;
+        }
+
+        public void UnhighlightSquare(int index)
+        {
+            _squareRenderers[index].material.color = IsWhiteSquare(index) ? lightColor : darkColor;
+        }
+
+        public static bool IsWhiteSquare(int index)
+        {
+            var file = index & 7;
+            var rank = index >> 3;
+            return (file + rank) % 2 == 0;
+        }
         
-        
+        public static bool IsBlackSquare(int index)
+        {
+            var file = index & 7;
+            var rank = index >> 3;
+            return (file + rank) % 2 != 0;
+        }
+
     }
 }

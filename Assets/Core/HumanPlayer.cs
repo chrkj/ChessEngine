@@ -55,7 +55,8 @@ namespace Chess.Core
 
                 _selectedPiece = _board.GetPiece(_selectedIndex);
                 if (!_board.IsCurrentPlayerPiece(_selectedPiece)) return;
-                
+
+                _boardUI.HighlightSquare(_selectedIndex);
                 _currentState = InputState.PieceDragging;
             }
         }
@@ -88,14 +89,21 @@ namespace Chess.Core
             }
             # endregion
             
-            // Generate all legal moves from current board
-            var legalMoves = MoveGenerator.GenerateLegalMoves(_board);
-            // Check of chosen move is contained in the set of legal moves
-            if (legalMoves.Contains(chosenMove))
-                ChooseMove(chosenMove);
-            else
-                _boardUI.ResetPiece(_selectedIndex);
-            
+            //// Generate all legal moves from current board
+            //var legalMoves = MoveGenerator.GenerateLegalMoves(_board);
+            //// Check of chosen move is contained in the set of legal moves
+            //if (legalMoves.Contains(chosenMove))
+            //else
+            //    _boardUI.ResetPiece(_selectedIndex);
+
+            var lastMove = _board.GetLastMove();
+            if (lastMove != null)
+            {
+                _boardUI.UnhighlightSquare(lastMove.StartSquare);
+                _boardUI.UnhighlightSquare(lastMove.TargetSquare);
+            }
+            ChooseMove(chosenMove);
+            _boardUI.HighlightSquare(targetIndex);
             _currentState = InputState.None;
         }
     }

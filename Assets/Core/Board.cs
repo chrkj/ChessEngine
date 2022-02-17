@@ -1,14 +1,16 @@
-﻿using UnityEditor;
+﻿using System.Collections;
+using System.Collections.Generic;
 
 namespace Chess.Core
 {
     public class Board
     {
-        // TODO: Should be private and accessed through MakeMove method.
         private readonly byte[] _board = new byte[64];
 
         private bool _isWhiteToMove = true;
         private int _colorToMove = Piece.White;
+
+        private readonly Stack<Move> _history = new Stack<Move>();
 
         // *******************************************************
         // BOARD -- Board Array. Used to hold the current position 
@@ -103,11 +105,18 @@ namespace Chess.Core
         // TODO: Set can castle flag
         public void MakeMove(Move move)
         {
+            _history.Push(move);
             _board[move.TargetSquare] = move.Piece;
             _board[move.TargetSquare] |= Piece.MovedMask;
             _board[move.StartSquare] = Piece.None;
             _isWhiteToMove = !_isWhiteToMove;
             _colorToMove = (_isWhiteToMove) ? Piece.White : Piece.Black;
+        }
+
+        public Move GetLastMove()
+        {
+            if (_history.Count == 0) return null;
+            return _history.Peek();
         }
         
         public static int GetBoardIndex(int file, int rank)

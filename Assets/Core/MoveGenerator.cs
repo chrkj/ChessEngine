@@ -3,9 +3,8 @@ using UnityEngine;
 
 namespace Chess.Core
 {
-    public class MoveGenerator
+    public static class MoveGenerator
     {
-        public MoveGenerator() { }
 
         public static HashSet<Move> GenerateLegalMoves(Board board)
         {
